@@ -2,6 +2,10 @@
 
 MERN Stack ChatGPT Project
 
+## Planning
+![Header Planning](Planning/header.jpg)
+![Pages Planning](Planning/pages.jpg)
+
 ## Key features:
 - MERN stack deep guide
 - Create user authentication and authorization system
