@@ -2,6 +2,17 @@
 
 MERN Stack ChatGPT Project
 
+## Planning
+<p align="center">
+  <img width="800px" src="Planning/header.jpg" alt="header">
+</p>
+<p align="center">
+  <img width="800px" src="Planning/pages.jpg" alt="pages">
+</p>
+
+
+
+
 ## Key features:
 - MERN stack deep guide
 - Create user authentication and authorization system
