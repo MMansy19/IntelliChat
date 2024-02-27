@@ -6,17 +6,17 @@ const Logo = () => {
       style={{
         display: "flex",
         marginRight: "auto",
-        alignItems: "center",
-        gap: "15px",
+        alignItems: "centear",
+        gap: "20px",
       }}
     >
       <Link to={"/"}>
         <img
-          src="openai.png"
+          src="openai-colored.svg"
           alt="openai"
-          width={"30px"}
-          height={"30px"}
-          className="image-inverted"
+          width={"35px"}
+          height={"35px"}
+          // className="image-inverted"
         />
       </Link>
       <Typography
@@ -24,10 +24,11 @@ const Logo = () => {
           display: { md: "block", sm: "none", xs: "none" },
           mr: "auto",
           fontWeight: "800",
+          fontSize: "20px",
           textShadow: "2px 2px 20px #000",
         }}
       >
-        <span style={{ fontSize: "20px" }}>Intelli</span>-Chat
+        <span style={{ fontSize: "25px" }}>Intelli</span>-Chat
       </Typography>
     </div>
   );

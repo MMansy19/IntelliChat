@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;800&family=Work+Sans&display=swap");
 
 html,
 body {
@@ -8,7 +8,61 @@ body {
   color: white;
   font-family: "Roboto Slab", serif;
 }
+/* For Webkit browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 0.5rem; /* Adjust the width as needed */
+}
 
+::-webkit-scrollbar-track {
+  background-color: wheat;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  background: orange;
+}
 .image-inverted {
   filter: invert(100%);
+}
+.nav-link {
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+.nav-button {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.nav-button:active {
+  transform: translateY(2px);
+}
+.nav-button:hover {
+  .nav-text {
+    font-weight: 800;
+    text-decoration: underline;
+    font-size: 15px;
+    padding: 2px;
+    transition: all 0.5s ease;
+    color: rgb(147, 97, 6);
+  }
+}
+
+.MuiOutlinedInput-input-root.Mui-focused,
+.MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
