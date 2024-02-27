@@ -21,6 +21,16 @@ body {
   border-radius: 0.25rem; /* Slightly rounded corners */
   background: orange;
 }
+
+.video__loop {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.08;
+}
+
 .image-inverted {
   filter: invert(100%);
 }

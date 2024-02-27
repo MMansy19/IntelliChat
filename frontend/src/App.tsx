@@ -5,10 +5,10 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
-import { useAuth } from "./context/AuthContext";
+// import { useAuth } from "./context/AuthContext";
 // import Footer from "./components/footer/Footer";
 function App() {
-  const auth = useAuth();
+  // const auth = useAuth();
 
   return (
     <main>
