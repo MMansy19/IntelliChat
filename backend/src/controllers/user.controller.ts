@@ -3,6 +3,11 @@ import bycrpt from "bcrypt"
 import { createToken } from "../utils/token-manager.js";
 import exp from "constants";
 import { COOKIE_NAME } from "../utils/constants.js";
+import jwt from 'jsonwebtoken'
+import { resolve } from "path";
+import { promisify } from "util";
+import {config} from "dotenv"
+config()
 export async function getAllUser(req, res, next) {
     console.log("get all users")
     try {
@@ -67,6 +72,48 @@ export async function login(req, res, next) {
         console.log(error)
         return res.status(400).json({
             message: "ERROR",            
+        }) 
+    } 
+    
+}
+export  const verify_token=async(req, res, next)=> {
+    try {
+        const token = req.signedCookies[`${COOKIE_NAME}`];
+        if (!token || token.trim() === "") {
+            return res.status(401).json({
+                message:"Token not vaild",
+            })
+        }
+        const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET) 
+        res.locals.jwtData = decoded; 
+        console.log("Token is verified successfully");
+        next();
+    } catch (error) {
+        console.log(error)
+        return res.status(401).json({
+            message:"Token expired"
+        })
+    } 
+    
+}
+
+export async function verify_user(req, res, next) {
+    try {
+        const found_user = await User.findById(res.locals.jwtData.id);
+        if (!found_user ) {
+           return res.status(401).json("You should login or resigter first ");
+        }
+        return res.status(200).json({
+            message: "OK",
+            id: found_user._id.toString(),
+            email:found_user.email,
+            name:found_user.name,
+        }) 
+    } catch (error) {
+        console.log(error)
+        return res.status(400).json({
+            message: "ERROR", 
+            cuase:error.message
         }) 
     } 
     
