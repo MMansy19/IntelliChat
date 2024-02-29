@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\" ",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "debug": "ndb dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +22,8 @@
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.1",
-    "mongoose": "^7.4.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^7.6.9",
     "openai": "^3.3.0"
   },
   "devDependencies": {
