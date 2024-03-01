@@ -24,5 +24,8 @@ const signupValidator = [
     body("name").notEmpty().withMessage("Name is requied"),
     ...loginValidator,
 ];
-export { validate, signupValidator, loginValidator };
+const chatValidator = [
+    body("message").notEmpty().withMessage("Message is requied"),
+];
+export { validate, signupValidator, loginValidator, chatValidator };
 //# sourceMappingURL=validator.js.map
