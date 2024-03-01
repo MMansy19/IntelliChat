@@ -1,4 +1,4 @@
-# IntelliChat (MERN) 
+# IntelliChat (MERN)
 
 IntelliChat is a modern chat application developed using React components, Material UI (MUI), Vite, and integrated with the API of ChatGPT for advanced conversational capabilities. The project focuses on delivering a seamless chatting experience with an intuitive user interface, efficient backend architecture, and responsive design.
 
@@ -8,18 +8,33 @@ IntelliChat is a modern chat application developed using React components, Mater
 
 ## Screenshots
 
-![Screenshot 1](Planning/header.jpg)
-![Screenshot 2](Planning/.jpg)
-![Screenshot 3](Planning/.jpg)
+![Screenshot 1](Planning/1.png)
+![Screenshot 2](Planning/2.png)
+![Screenshot 3](Planning/3.png)
 
 ## Planning
-<p align="center">
+
+<style>
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+  .image-container img {
+    width: 400px; 
+    margin: 0 10px;
+  }
+</style>
+<div class="image-container">
+  <img src="Planning/header.jpg" alt="header">
+  <img src="Planning/pages.jpg" alt="pages">
+</div>
+
+<!-- <p align="center">
   <img width="800px" src="Planning/header.jpg" alt="header">
 </p>
 <p align="center">
   <img width="800px" src="Planning/pages.jpg" alt="pages">
-</p>
-
+</p> -->
 
 ## Features
 
@@ -66,21 +81,13 @@ To run IntelliChat locally, follow these steps:
 
 6. Access IntelliChat in your browser at `http://localhost:3000`.
 
-
-
 ## Project Contributors 🤝
 
-| Developer Name             | Role                 | GitHub                                             | LinkedIn                                           |
-|-------------------------|----------------------|----------------------------------------------------|----------------------------------------------------|
-| **Mahmoud Mansy**       | Frontend Developer   | [GitHub](https://github.com/MMansy19)         | [LinkedIn](https://www.linkedin.com/in/mahmoud-mansy-a189a5232/) |
-| **Abdulrahman Mohamed** | Backend Developer    | [GitHub](https://github.com/abdomohamed96)   | [LinkedIn](https://www.linkedin.com/in/abdelrahman-mohamed-b7944123a/) |
-
+| Developer Name          | Role               | GitHub                                     | LinkedIn                                                               |
+| ----------------------- | ------------------ | ------------------------------------------ | ---------------------------------------------------------------------- |
+| **Mahmoud Mansy**       | Frontend Developer | [GitHub](https://github.com/MMansy19)      | [LinkedIn](https://www.linkedin.com/in/mahmoud-mansy-a189a5232/)       |
+| **Abdulrahman Mohamed** | Backend Developer  | [GitHub](https://github.com/abdomohamed96) | [LinkedIn](https://www.linkedin.com/in/abdelrahman-mohamed-b7944123a/) |
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-
-
-
-
