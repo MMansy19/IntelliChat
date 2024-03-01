@@ -14,27 +14,10 @@ IntelliChat is a modern chat application developed using React components, Mater
 
 ## Planning
 
-<style>
-  .image-container {
-    display: flex;
-    justify-content: center;
-  }
-  .image-container img {
-    width: 400px; 
-    margin: 0 10px;
-  }
-</style>
-<div class="image-container">
-  <img src="Planning/header.jpg" alt="header">
+<div style="display: flex; justify-content: center;">
+  <img style="width: 400px; margin: 0 10px;" src="Planning/header.jpg" alt="header">
   <img src="Planning/pages.jpg" alt="pages">
 </div>
-
-<!-- <p align="center">
-  <img width="800px" src="Planning/header.jpg" alt="header">
-</p>
-<p align="center">
-  <img width="800px" src="Planning/pages.jpg" alt="pages">
-</p> -->
 
 ## Features
 
