@@ -31,3 +31,37 @@ export const generateChatCompeltion =async (req, res, next) => {
         return res.status(500).json({ message:"Something went wrong" });
    }
 }
+export const get_all_chat = async (req, res, next) => {
+    try{
+        const user = await User.findById(res.locals.jwtData.id);
+        if (!user) {
+            return res.status(401).json({
+                message: "User not registered or Token malfunctioned"
+            })
+        }
+        return res.status(200).json({ message:"OK",chats: user.chats });
+    } catch (error) { 
+    console.log(error);
+    return res.status(500).json({ message:"ERROR",cause:error.message});
+    }
+
+}
+
+export const delete_chat= async (req, res, next) => {
+    try{
+        const user = await User.findById(res.locals.jwtData.id);
+        if (!user) {
+            return res.status(401).json({
+                message: "User not registered or Token malfunctioned"
+            })
+        }
+        //@ts-ignore
+        user.chats = [];
+        await user.save();
+        return res.status(200).json({ message:"OK" });
+    } catch (error) { 
+    console.log(error);
+    return res.status(500).json({ message:"ERROR",cause:error.message});
+    }
+
+}
