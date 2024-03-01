@@ -12,16 +12,14 @@ export async function getAllUser(req, res, next) {
         const users = await User.find();
         return res.status(200).json({
             message: "OK",
-            data: {
-                users
-            }
+            users
         });
     }
     catch (error) {
         console.log(error);
-        return res.status(500).json({
+        return res.status(200).json({
             message: "ERROR",
-            // message: error.message
+            cause: error.message
         });
     }
 }
@@ -31,7 +29,7 @@ export async function signup(req, res, next) {
         const hashedPassword = await bycrpt.hash(password, 10);
         const found_user = await User.findOne({ email });
         if (found_user) {
-            return res.status(401).json("user already exists");
+            return res.status(401).send("user already exists");
         }
         const user = await User.create({ name, email, password: hashedPassword });
         createTokenAndSetCookie(found_user, res);
@@ -42,9 +40,9 @@ export async function signup(req, res, next) {
     }
     catch (error) {
         console.log(error);
-        return res.status(400).json({
+        return res.status(200).json({
             message: "ERROR",
-            data: null
+            cause: error.message
         });
     }
 }
@@ -56,15 +54,16 @@ export async function login(req, res, next) {
             return res.status(401).json("Email not exists or passsword is not correct");
         }
         createTokenAndSetCookie(found_user, res);
-        return res.status(201).json({
+        return res.status(200).json({
             message: "OK",
             id: found_user._id.toString()
         });
     }
     catch (error) {
         console.log(error);
-        return res.status(400).json({
+        return res.status(200).json({
             message: "ERROR",
+            cause: error.message
         });
     }
 }
@@ -103,7 +102,7 @@ export async function verify_user(req, res, next) {
     }
     catch (error) {
         console.log(error);
-        return res.status(400).json({
+        return res.status(200).json({
             message: "ERROR",
             cuase: error.message
         });
@@ -134,4 +133,31 @@ const createTokenAndSetCookie = (user, res) => {
         */
     });
 };
+export async function logout(req, res, next) {
+    try {
+        const found_user = await User.findById(res.locals.jwtData.id);
+        if (!found_user) {
+            return res.status(401).json("You should login or resigter first ");
+        }
+        res.clearCookie(COOKIE_NAME, {
+            path: '/',
+            domain: "localhost",
+            httpOnly: true,
+            signed: true
+        });
+        return res.status(200).json({
+            message: "OK",
+            id: found_user._id.toString(),
+            email: found_user.email,
+            name: found_user.name,
+        });
+    }
+    catch (error) {
+        console.log(error);
+        return res.status(200).json({
+            message: "ERROR",
+            cuase: error.message
+        });
+    }
+}
 //# sourceMappingURL=user.controller.js.map

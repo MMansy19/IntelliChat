@@ -44,7 +44,7 @@ export const get_all_chat = async (req, res, next) => {
     }
     catch (error) {
         console.log(error);
-        return res.status(500).json({ message: "ERROR", cause: error.message });
+        return res.status(200).json({ message: "ERROR", cause: error.message });
     }
 };
 export const delete_chat = async (req, res, next) => {
@@ -62,7 +62,7 @@ export const delete_chat = async (req, res, next) => {
     }
     catch (error) {
         console.log(error);
-        return res.status(500).json({ message: "ERROR", cause: error.message });
+        return res.status(200).json({ message: "ERROR", cause: error.message });
     }
 };
 //# sourceMappingURL=chat.controller.js.map

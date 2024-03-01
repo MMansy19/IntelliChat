@@ -6,4 +6,4 @@ const router = express.Router();
 router.post("/new",validate(chatValidator),verify_token,generateChatCompeltion)
 router.get("/all-chats",verify_token,get_all_chat)
 router.delete("/delete",verify_token,delete_chat)
-export default router;
+export default router;  
