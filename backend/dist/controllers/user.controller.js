@@ -111,7 +111,7 @@ export async function verify_user(req, res, next) {
 const createTokenAndSetCookie = (user, res) => {
     res.clearCookie(COOKIE_NAME, {
         path: '/',
-        domain: "localhost",
+        //domain: "localhost",
         httpOnly: true,
         signed: true
     });
@@ -141,7 +141,7 @@ export async function logout(req, res, next) {
         }
         res.clearCookie(COOKIE_NAME, {
             path: '/',
-            domain: "localhost",
+            //domain: "localhost",
             httpOnly: true,
             signed: true
         });
