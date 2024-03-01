@@ -1,4 +1,3 @@
-import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Logo from "./shared/Logo";
@@ -8,7 +7,7 @@ import NavigationLink from "./shared/NavigationLink";
 const Header = () => {
   const auth = useAuth();
   return (
-    <AppBar sx={{ bgcolor: "#05101c", position: "fixed", boxShadow: "none" }}>
+    <AppBar sx={{ bgcolor: "#010911", position: "fixed", boxShadow: "none" }}>
       <Toolbar sx={{ display: "flex" }}>
         <Logo />
         <div>

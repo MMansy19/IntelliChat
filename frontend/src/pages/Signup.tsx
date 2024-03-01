@@ -60,6 +60,7 @@ const Signup = () => {
             boxShadow: "10px 10px 20px #000",
             borderRadius: "10px",
             border: "none",
+            background: "#010911",
           }}
         >
           <Box
