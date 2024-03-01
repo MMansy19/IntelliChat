@@ -8,9 +8,7 @@ import NavigationLink from "./shared/NavigationLink";
 const Header = () => {
   const auth = useAuth();
   return (
-    <AppBar
-      sx={{ bgcolor: "transparent", position: "fixed", boxShadow: "none" }}
-    >
+    <AppBar sx={{ bgcolor: "#05101c", position: "fixed", boxShadow: "none" }}>
       <Toolbar sx={{ display: "flex" }}>
         <Logo />
         <div>

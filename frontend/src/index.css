@@ -51,8 +51,7 @@ body {
   .nav-text {
     font-weight: 800;
     text-decoration: underline;
-    font-size: 15px;
-    padding: 2px;
+    padding: 2px 0;
     transition: all 0.5s ease;
     color: rgb(147, 97, 6);
   }
