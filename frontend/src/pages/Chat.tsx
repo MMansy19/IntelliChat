@@ -28,6 +28,8 @@ const Chat = () => {
     const newMessage: Message = { role: "user", content };
     setChatMessages((prev) => [...prev, newMessage]);
     const chatData = await sendChatRequest(content);
+    // window.location?.reload(true);/
+
     setChatMessages([...chatData.chats]);
     //
   };
@@ -58,8 +60,7 @@ const Chat = () => {
   }, [auth]);
   useEffect(() => {
     if (!auth?.user) {
-      // return navigate("/login");
-      return navigate("/chat");
+      return navigate("/login");
     }
   }, [auth]);
   return (
@@ -101,7 +102,7 @@ const Chat = () => {
             }}
           >
             {auth?.user?.name[0]}
-            {auth?.user?.name.split(" ")[1][0]}
+            {/* {auth?.user?.name.split(" ")[1][0]} */}
           </Avatar>
           <Typography sx={{ mx: "auto", fontFamily: "work sans" }}>
             You are talking to a ChatBOT

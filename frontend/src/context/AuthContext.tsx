@@ -33,11 +33,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     // fetch if the user's cookies are valid then skip login
     async function checkStatus() {
       const data = await checkAuthStatus();
+
+      console.log(data);
       if (data) {
         setUser({ email: data.email, name: data.name });
         setIsLoggedIn(true);
       }
     }
+    // console.log(123456789);
     checkStatus();
   }, []);
   const login = async (email: string, password: string) => {

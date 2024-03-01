@@ -11,7 +11,7 @@ const Header = () => {
       <Toolbar sx={{ display: "flex" }}>
         <Logo />
         <div>
-          {/* {auth?.isLoggedIn ? (
+          {auth?.isLoggedIn ? (
             <>
               <NavigationLink
                 bg="#00fffc"
@@ -42,8 +42,8 @@ const Header = () => {
                 text="Signup"
               />
             </>
-          )} */}
-          <>
+          )}
+          {/* <>
             <NavigationLink
               bg="#00fffc"
               to="/chat"
@@ -69,7 +69,7 @@ const Header = () => {
               to="/signup"
               text="Signup"
             />
-          </>
+          </> */}
         </div>
       </Toolbar>
     </AppBar>

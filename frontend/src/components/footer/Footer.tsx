@@ -27,7 +27,7 @@ const Footer = () => {
             <Link
               style={{ color: "white" }}
               className="nav-link"
-              to={"https://github.com/abdomohamed96"}
+              to={"https://www.linkedin.com/in/abdelrahman-mohamed-b7944123a/"}
             >
               Abdulrahman Mohamed
             </Link>

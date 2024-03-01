@@ -14,6 +14,7 @@ const Logo = () => {
       <img
         src="openai-colored.svg"
         alt="openai"
+        className="rotate"
         width={"35px"}
         height={"35px"}
         // className="image-inverted"
