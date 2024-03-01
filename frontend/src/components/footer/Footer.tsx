@@ -24,7 +24,11 @@ const Footer = () => {
           </span>
           &
           <span>
-            <Link style={{ color: "white" }} className="nav-link" to={""}>
+            <Link
+              style={{ color: "white" }}
+              className="nav-link"
+              to={"https://github.com/abdomohamed96"}
+            >
               Abdulrahman Mohamed
             </Link>
           </span>
