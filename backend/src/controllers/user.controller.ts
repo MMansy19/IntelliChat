@@ -80,6 +80,7 @@ export const verify_token = async (req, res, next) => {
         message: "Token not vaild",
       });
     }
+    //@ts-ignore
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
     res.locals.jwtData = decoded;
     console.log("Token is verified successfully");
