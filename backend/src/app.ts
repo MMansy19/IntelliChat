@@ -8,11 +8,10 @@ config();
 const app = express();
 
 //middlewares
-app.use(cors({
-    origin: "https://intellichat-mern.netlify.app",
-    credentials: true,
-    optionsSuccessStatus:200
-}));
+app.use(
+    cors({ origin: "https://intellichat-mern.netlify.app", credentials: true })
+  );   
+
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
