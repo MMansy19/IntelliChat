@@ -34,11 +34,11 @@ export async function signup(req, res, next) {
       return res.status(401).send("user already exists");
     }
     const user = await User.create({ name, email, password: hashedPassword });
-    createTokenAndSetCookie(found_user, res);
+    createTokenAndSetCookie(user, res);
     return res.status(201).json({
       message: "OK",
-      name: found_user.name,
-      email: found_user.email,
+      name: user.name,
+      email: user.email,
     });
   } catch (error) {
     console.log(error);
