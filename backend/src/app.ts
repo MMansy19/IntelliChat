@@ -9,7 +9,7 @@ const app = express();
 
 //middlewares
 app.use(cors({
-    origin: "https://intellichat-mern.netlify.app/",
+    origin: "https://intellichat-mern.netlify.app",
     credentials: true,
     optionsSuccessStatus:200
 }));
