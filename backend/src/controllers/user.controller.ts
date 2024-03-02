@@ -80,6 +80,7 @@ export const verify_token = async (req, res, next) => {
         message: "Token not vaild",
       });
     }
+    //@ts-ignore
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
     res.locals.jwtData = decoded;
     console.log("Token is verified successfully");
@@ -115,7 +116,7 @@ export async function verify_user(req, res, next) {
 const createTokenAndSetCookie = (user, res) => {
   res.clearCookie(COOKIE_NAME, {
     path: "/",
-    //domain: "localhost",
+    domain: "intellichat-server.onrender.com",
     httpOnly: true,
     signed: true,
   });
@@ -126,7 +127,7 @@ const createTokenAndSetCookie = (user, res) => {
     path: "/",
     // is the for which the cookie is valid
     //'/' means the entire domain
-    // domain: "localhost",
+     domain: "intellichat-server.onrender.com",
     expiresIn: expires,
     httpOnly: true,
     signed: true,
@@ -147,7 +148,7 @@ export async function logout(req, res, next) {
     }
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      //domain: "localhost",
+      domain: "intellichat-server.onrender.com",
       httpOnly: true,
       signed: true,
     });
