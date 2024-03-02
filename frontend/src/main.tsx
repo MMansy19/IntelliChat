@@ -8,11 +8,7 @@ import { AuthProvider } from "./context/AuthContext.tsx";
 import { Toaster } from "react-hot-toast";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 import axios from "axios";
-console.log(process.env.NODE_ENV )
-if (process.env.NODE_ENV === "production") {
-  disableReactDevTools();
-}
-axios.defaults.baseURL = "https://intellichat-api.onrender.com";
+axios.defaults.baseURL = "https://intellichat-server.onrender.com/api/v1";
 axios.defaults.withCredentials = true;
 const theme = createTheme({
   typography: {
