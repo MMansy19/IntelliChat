@@ -116,7 +116,7 @@ export async function verify_user(req, res, next) {
 const createTokenAndSetCookie = (user, res) => {
   res.clearCookie(COOKIE_NAME, {
     path: "/",
-    domain: "localhost",
+    //domain: "localhost",
     //domain: "intellichat-server.onrender.com",
     httpOnly: true,
     signed: true,
@@ -128,7 +128,7 @@ const createTokenAndSetCookie = (user, res) => {
     path: "/",
     // is the for which the cookie is valid
     //'/' means the entire domain
-     domain: "localhost",
+     //domain: "localhost",
     expiresIn: expires,
     httpOnly: true,
     signed: true,
@@ -149,7 +149,7 @@ export async function logout(req, res, next) {
     }
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "localhost",
+      //domain: "localhost",
       httpOnly: true,
       signed: true,
     });
