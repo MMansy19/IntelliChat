@@ -12,7 +12,7 @@ console.log(process.env.NODE_ENV )
 if (process.env.NODE_ENV === "production") {
   disableReactDevTools();
 }
-axios.defaults.baseURL = "https://intellichat-api.onrender.com";
+axios.defaults.baseURL = "https://intellichat-api.onrender.com/api/v1";
 axios.defaults.withCredentials = true;
 const theme = createTheme({
   typography: {
