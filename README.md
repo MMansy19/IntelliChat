@@ -6,6 +6,28 @@ IntelliChat is a modern chat application developed using React components, Mater
 
 ## [Video Demo]()
 
+
+## 🧰 Tech Stack
+
+- **Frontend**
+
+<img src="https://img.icons8.com/color/48/000000/react-native.png"/> <img src="https://img.icons8.com/color/48/000000/redux.png"/> <img src="https://img.icons8.com/color/48/000000/javascript.png"/> <img src="https://img.icons8.com/color/48/000000/sass.png"/> <img src="https://img.icons8.com/color/48/000000/figma.png">
+
+- **Backend**
+
+<img src="https://img.icons8.com/color/48/000000/nodejs.png"/> <img src="https://img.icons8.com/color/48/000000/express-js.png"/> <img src="https://img.icons8.com/color/48/000000/postgreesql.png"/>
+
+
+## Features
+
+- **Modern React Components**: Utilizes React components to create a dynamic and interactive user interface.
+- **Material UI (MUI)**: Integrates the Material UI library for designing beautiful and responsive UI components.
+- **Vite**: Utilizes Vite for fast and efficient development builds.
+- **ChatGPT API Integration**: Integrates the ChatGPT API for advanced conversational functionalities.
+- **Responsive Design**: Ensures seamless usability across various devices with responsive design principles.
+- **Efficient Backend**: Developed with a robust backend architecture by Abdulrahman Mohamed.
+- **Intuitive Frontend**: Designed with a user-friendly interface by Mahmoud Mansy.
+
 ## Screenshots
 
 ![Screenshot 1](Planning/1.png)
@@ -18,17 +40,6 @@ IntelliChat is a modern chat application developed using React components, Mater
   <img style="width: 400px; height: 400px; margin: 0 10px;" src="Planning/header.jpg" alt="header">
   <img style="width: 400px; height: 400px; margin: 0 10px;" src="Planning/pages.jpg" alt="pages">
 </div>
-
-## Features
-
-- **Modern React Components**: Utilizes React components to create a dynamic and interactive user interface.
-- **Material UI (MUI)**: Integrates the Material UI library for designing beautiful and responsive UI components.
-- **Vite**: Utilizes Vite for fast and efficient development builds.
-- **ChatGPT API Integration**: Integrates the ChatGPT API for advanced conversational functionalities.
-- **Responsive Design**: Ensures seamless usability across various devices with responsive design principles.
-- **Efficient Backend**: Developed with a robust backend architecture by Abdulrahman Mohamed.
-- **Intuitive Frontend**: Designed with a user-friendly interface by Mahmoud Mansy.
-
 ## Getting Started
 
 To run IntelliChat locally, follow these steps:
