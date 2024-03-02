@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
 import { Box, Avatar, Typography } from "@mui/material";
-import { useAuth } from "../../context/AuthContext";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useAuth } from "../../context/AuthContext";
 
 function extractCodeFromString(message: string) {
   if (message.includes("```")) {
@@ -25,6 +26,11 @@ function isCodeBlock(str: string) {
   }
   return false;
 }
+
+const capitalizeFirstLetter = (str: string | undefined) => {
+  return str?.charAt(0).toUpperCase();
+};
+
 const ChatItem = ({
   content,
   role,
@@ -32,9 +38,27 @@ const ChatItem = ({
   content: string;
   role: "user" | "assistant";
 }) => {
+  const [displayedContent, setDisplayedContent] = useState("");
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= content.length) {
+        setDisplayedContent(content.substring(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 45);
+
+    return () => clearInterval(interval);
+  }, [content]);
+
   const messageBlocks = extractCodeFromString(content);
+
   const auth = useAuth();
-  return role == "assistant" ? (
+
+  return role === "assistant" ? (
     <Box
       sx={{
         display: "flex",
@@ -55,7 +79,7 @@ const ChatItem = ({
       </Avatar>
       <Box>
         {!messageBlocks && (
-          <Typography sx={{ fontSize: "20px" }}>{content}</Typography>
+          <Typography sx={{ fontSize: "20px" }}>{displayedContent}</Typography>
         )}
         {messageBlocks &&
           messageBlocks.length &&
@@ -81,12 +105,11 @@ const ChatItem = ({
       }}
     >
       <Avatar sx={{ ml: "0", bgcolor: "black", color: "white" }}>
-        {auth?.user?.name[0]}
-        {/* {auth?.user?.name.split(" ")[1][0]} */}
+        {capitalizeFirstLetter(auth?.user?.name[0])}
       </Avatar>
       <Box>
         {!messageBlocks && (
-          <Typography sx={{ fontSize: "20px" }}>{content}</Typography>
+          <Typography sx={{ fontSize: "20px" }}>{displayedContent}</Typography>
         )}
         {messageBlocks &&
           messageBlocks.length &&

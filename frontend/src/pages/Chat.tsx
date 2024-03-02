@@ -5,6 +5,8 @@ import { useAuth } from "../context/AuthContext";
 import ChatItem from "../components/chat/ChatItem";
 import { IoMdSend } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import Footer2 from "../components/footer/Footer2";
+
 import {
   deleteUserChats,
   getUserChats,
@@ -28,10 +30,8 @@ const Chat = () => {
     const newMessage: Message = { role: "user", content };
     setChatMessages((prev) => [...prev, newMessage]);
     const chatData = await sendChatRequest(content);
-    // window.location?.reload(true);/
 
     setChatMessages([...chatData.chats]);
-    //
   };
   const handleDeleteChats = async () => {
     try {
@@ -63,6 +63,16 @@ const Chat = () => {
       return navigate("/login");
     }
   }, [auth]);
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
+  const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase();
+  };
+
   return (
     <Box
       sx={{
@@ -85,11 +95,12 @@ const Chat = () => {
           sx={{
             display: "flex",
             width: "100%",
-            height: "60vh",
+            height: "55vh",
             bgcolor: "rgb(17,29,39)",
             borderRadius: 5,
             flexDirection: "column",
             mx: 3,
+            animation: "slideInFromLeft 1.5s ease-in-out",
           }}
         >
           <Avatar
@@ -101,18 +112,21 @@ const Chat = () => {
               fontWeight: 700,
             }}
           >
-            {auth?.user?.name[0]}
-            {/* {auth?.user?.name.split(" ")[1][0]} */}
+            {capitalizeFirstLetter(auth?.user?.name[0])}
           </Avatar>
-          <Typography sx={{ mx: "auto", fontFamily: "work sans" }}>
+          <Typography sx={{ mx: "auto", fontFamily: "work sans", mt: 2 }}>
             You are talking to a ChatBOT
           </Typography>
-          <Typography sx={{ mx: "auto", fontFamily: "work sans", my: 4, p: 3 }}>
+          <Typography sx={{ mx: "auto", fontFamily: "work sans", my: 1, p: 3 }}>
             You can ask some questions related to Knowledge, Business, Advices,
             Education, etc. But avoid sharing personal information
           </Typography>
+          <Typography sx={{ mx: "auto", fontFamily: "work sans", mb: 2 }}>
+            How may I assist you today?
+          </Typography>
           <Button
             onClick={handleDeleteChats}
+            className="nav-button"
             sx={{
               width: "200px",
               my: "auto",
@@ -129,6 +143,21 @@ const Chat = () => {
             Clear Conversation
           </Button>
         </Box>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            height: "20vh",
+            bgcolor: "rgb(17,29,39)",
+            borderRadius: 5,
+            flexDirection: "column",
+            mx: 3,
+            mt: 7,
+            animation: "slideInFromLeft 1.5s ease-in-out",
+          }}
+        >
+          <Footer2 />
+        </Box>
       </Box>
       <Box
         sx={{
@@ -140,14 +169,17 @@ const Chat = () => {
       >
         <Typography
           sx={{
-            fontSize: "40px",
-            color: "white",
+            fontSize: "35px",
             mb: 2,
             mx: "auto",
             fontWeight: "600",
+            backgroundImage: "linear-gradient(to right, #00aaff, #00ffff)",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
           }}
         >
-          Model - GPT 3.5 Turbo
+          <span style={{ fontSize: "40px" }}>GPT 3.5</span> Enhanced Language
+          Model
         </Typography>
         <Box
           sx={{
@@ -174,9 +206,9 @@ const Chat = () => {
             backgroundColor: "rgb(17,27,39)",
             display: "flex",
             margin: "auto",
+            animation: "slideInFromBottom 1.5s ease-in-out",
           }}
         >
-          {" "}
           <input
             ref={inputRef}
             type="text"
@@ -189,6 +221,7 @@ const Chat = () => {
               color: "white",
               fontSize: "20px",
             }}
+            onKeyPress={handleKeyPress}
           />
           <IconButton onClick={handleSubmit} sx={{ color: "white", mx: 1 }}>
             <IoMdSend />

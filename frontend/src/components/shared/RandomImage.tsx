@@ -5,9 +5,7 @@ function RandomImage() {
   // Array of image URLs
   const images = [
     "airobot.png",
-    "robot.png",
     "robott.png",
-    "1.png",
     "2.png",
     "3.png",
     "4.png",
@@ -32,11 +30,16 @@ function RandomImage() {
   }, []); // Run this effect only once on component mount
 
   return (
-    <Box padding={8} mt={5} display={{ md: "flex", sm: "none", xs: "none" }}>
+    <Box
+      padding={8}
+      mt={5}
+      display={{ md: "flex", sm: "none", xs: "none" }}
+      className="random-image-container"
+    >
       <img
         src={`images/${images[randomIndex]}`}
         alt="Robot"
-        style={{ maxHeight: "700px", position: "fixed" }}
+        className="random-image"
       />
     </Box>
   );

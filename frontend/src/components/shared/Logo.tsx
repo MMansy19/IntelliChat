@@ -17,7 +17,6 @@ const Logo = () => {
         className="rotate"
         width={"35px"}
         height={"35px"}
-        // className="image-inverted"
       />
       <Typography
         sx={{

@@ -74,3 +74,115 @@ body {
     transform: rotate(359deg);
   }
 }
+
+/* Footer */
+.footer-container {
+  width: 100%;
+  min-height: 20vh;
+  max-height: 30vh;
+  margin-top: 60px;
+  color: gray;
+}
+.footer-container-2 {
+  width: 100%;
+  min-height: 20vh;
+  max-height: 30vh;
+  /* margin-top: 60px; */
+  color: gray;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
+}
+.footer-text-2 {
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0 10px;
+}
+
+.footer-link:hover {
+  color: #ffa500;
+}
+
+.footer-link:active {
+  color: #ff6347;
+}
+
+/* // End Footer */
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Image */
+.random-image-container {
+  overflow: hidden;
+  position: relative;
+  height: 0;
+}
+
+.random-image {
+  max-height: 700px;
+  position: fixed;
+  top: -100%;
+  animation: slideFromTop 2s forwards, jump 5s infinite alternate; /* Combine both animations */
+}
+
+@keyframes slideFromTop {
+  from {
+    top: -100%; /* Start position */
+  }
+  to {
+    top: 20%; /* End position */
+  }
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(-3%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+/*// End Image */
+
+/* Chat Animations */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%); /* Start position (outside of the screen) */
+  }
+  to {
+    transform: translateX(0); /* End position (original position) */
+  }
+}
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(200%); /* Start position (outside of the screen) */
+  }
+  to {
+    transform: translateY(0); /* End position (original position) */
+  }
+}
+/*// End Chat Animations */

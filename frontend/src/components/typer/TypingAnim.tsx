@@ -4,13 +4,12 @@ const TypingAnim = () => {
   return (
     <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed once, initially
-        "Chat With Your OWN AI",
+        "Engage in Professional Conversations 💬",
         1000,
-        "Built With OpenAI 🤖",
-        2000,
-        "Your Own Customized ChatGPT 💻",
-        1500,
+        "Empower Your Communication 🚀",
+        1000,
+        "Enhance Productivity with AI Assistants 🤖",
+        1000,
       ]}
       speed={50}
       style={{
@@ -18,6 +17,7 @@ const TypingAnim = () => {
         color: "white",
         display: "inline-block",
         textShadow: "1px 1px 20px #000",
+        animation: "fadeInOut 6s infinite",
       }}
       repeat={Infinity}
     />
