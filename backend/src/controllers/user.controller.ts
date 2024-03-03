@@ -122,7 +122,7 @@ const createTokenAndSetCookie = (user, res) => {
     secure: true, // Set to true if your site is served over HTTPS
     httpOnly: true, // Set to true to prevent client-side access to the cookie
     // Additional options if needed
-    //signed: true,
+    signed: true,
   });
   
   const token = createToken(user._id, user.email, "7d");
@@ -135,7 +135,7 @@ const createTokenAndSetCookie = (user, res) => {
     secure: true, // Set to true if your site is served over HTTPS
     httpOnly: true, // Set to true to prevent client-side access to the cookie
     // Additional options if needed
-    //signed: true,
+    signed: true,
 
     /*
         signed indicates that the cookie should be signed using the secret provided by the cookie-parser middleware.
@@ -158,7 +158,7 @@ export async function logout(req, res, next) {
     secure: true, // Set to true if your site is served over HTTPS
     httpOnly: true, // Set to true to prevent client-side access to the cookie
     // Additional options if needed
-    //signed: true,
+    signed: true,
     });
     return res.status(200).json({
       message: "OK",

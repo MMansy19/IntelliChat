@@ -22,7 +22,7 @@ app.use(
 );   
 
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 //process.env.COOKIE_SECRET
 //remove it in production
 app.use(morgan("dev"));
