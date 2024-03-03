@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 import { resolve } from "path";
 import { promisify } from "util";
 import { config } from "dotenv";
-const domain = 'locahost'
+const domain = 'intellichat-mern.netlify.app'
 config();
 export async function getAllUser(req, res, next) {
   console.log("get all users");
