@@ -60,19 +60,17 @@ const Chat = () => {
   }, [auth]);
   useEffect(() => {
     if (!auth?.user) {
-      return navigate("/login");
+      navigate("/chat");
     }
-  }, [auth]);
-
+  }, [auth, navigate]);
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleSubmit();
     }
   };
-  const capitalizeFirstLetter = (str) => {
+  const capitalizeFirstLetter = (str: string) => {
     return str.charAt(0).toUpperCase();
   };
-
   return (
     <Box
       sx={{
@@ -112,7 +110,7 @@ const Chat = () => {
               fontWeight: 700,
             }}
           >
-            {capitalizeFirstLetter(auth?.user?.name[0])}
+            {capitalizeFirstLetter(auth?.user?.name[0] ?? "")}
           </Avatar>
           <Typography sx={{ mx: "auto", fontFamily: "work sans", mt: 2 }}>
             You are talking to a ChatBOT
