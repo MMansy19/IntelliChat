@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 import { resolve } from "path";
 import { promisify } from "util";
 import { config } from "dotenv";
+const domain = 'intellichat-mern.netlify.app'
 config();
 export async function getAllUser(req, res, next) {
   console.log("get all users");
@@ -115,21 +116,25 @@ export async function verify_user(req, res, next) {
 }
 const createTokenAndSetCookie = (user, res) => {
   res.clearCookie(COOKIE_NAME, {
-    path: "/",
-    domain: "intellichat-server.onrender.com",
-    httpOnly: true,
+    domain,
+   // domain: 'intellichat-mern.netlify.app', // Change to your domain
+    path: '/', // Change to the path where you want the cookie to be accessible
+    secure: true, // Set to true if your site is served over HTTPS
+    httpOnly: true, // Set to true to prevent client-side access to the cookie
+    // Additional options if needed
     signed: true,
   });
+  
   const token = createToken(user._id, user.email, "7d");
   let expires = new Date();
   expires.setDate(expires.getDate() + 7); //getDate () =>for dayes
   res.cookie(COOKIE_NAME, token, {
-    path: "/",
-    // is the for which the cookie is valid
-    //'/' means the entire domain
-     domain: "intellichat-server.onrender.com",
-    expiresIn: expires,
-    httpOnly: true,
+    //domain: 'intellichat-mern.netlify.app', // Change to your domain
+    domain,
+    path: '/', // Change to the path where you want the cookie to be accessible
+    secure: true, // Set to true if your site is served over HTTPS
+    httpOnly: true, // Set to true to prevent client-side access to the cookie
+    // Additional options if needed
     signed: true,
 
     /*
@@ -147,10 +152,13 @@ export async function logout(req, res, next) {
       return res.status(401).json("You should login or resigter first ");
     }
     res.clearCookie(COOKIE_NAME, {
-      path: "/",
-      domain: "intellichat-server.onrender.com",
-      httpOnly: true,
-      signed: true,
+      //domain: 'intellichat-mern.netlify.app', // Change to your domain
+    domain,
+    path: '/', // Change to the path where you want the cookie to be accessible
+    secure: true, // Set to true if your site is served over HTTPS
+    httpOnly: true, // Set to true to prevent client-side access to the cookie
+    // Additional options if needed
+    signed: true,
     });
     return res.status(200).json({
       message: "OK",
