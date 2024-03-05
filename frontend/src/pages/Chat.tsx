@@ -60,11 +60,7 @@ const Chat = () => {
   }, [auth]);
   useEffect(() => {
     if (!auth?.user) {
-<<<<<<< Updated upstream
-      navigate("/chat");
-=======
-      return navigate("/chat");
->>>>>>> Stashed changes
+      navigate("/login");
     }
   }, [auth, navigate]);
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {

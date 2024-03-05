@@ -40,6 +40,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         setIsLoggedIn(true);
       }
     }
+    // console.log(123456789);
     checkStatus();
   }, []);
   const login = async (email: string, password: string) => {
