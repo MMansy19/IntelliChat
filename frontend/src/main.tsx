@@ -6,6 +6,10 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import { Toaster } from "react-hot-toast";
+<<<<<<< Updated upstream
+=======
+// import { disableReactDevTools } from "@fvilers/disable-react-devtools";
+>>>>>>> Stashed changes
 import axios from "axios";
 axios.defaults.baseURL = "https://intellichat-server.onrender.com/api/v1";
 axios.defaults.withCredentials = true;
