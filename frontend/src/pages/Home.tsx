@@ -43,7 +43,7 @@ const Home = () => {
         </Box>
         <Box sx={{ display: "flex", mx: "auto" }}>
           <img
-            src="public\chat.png"
+            src="public\images\chat.png"
             alt="chatbot"
             style={{
               display: "flex",
