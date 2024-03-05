@@ -2,9 +2,9 @@
 
 IntelliChat is a modern chat application developed using React components, Material UI (MUI), Vite, and integrated with the API of ChatGPT for advanced conversational capabilities. The project focuses on delivering a seamless chatting experience with an intuitive user interface, efficient backend architecture, and responsive design.
 
-## [Live Link]()
+## [Live Link](https://intellichat-mern.netlify.app/)
 
-## [Video Demo]()
+## [Video Demo](https://drive.google.com/file/d/1XzJqS7IeBl8jcrYii-QMq8KDn1O9cM33/view?usp=sharing)
 
 
 ## 🧰 Tech Stack
