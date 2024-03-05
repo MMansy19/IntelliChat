@@ -11,7 +11,7 @@ IntelliChat is a modern chat application developed using React components, Mater
 
 - **Frontend**
 
-<img src="https://img.icons8.com/color/48/000000/react-native.png"/> <img src="https://img.icons8.com/color/48/000000/redux.png"/> <img src="https://img.icons8.com/color/48/000000/typescript.png"/> <img width="48" height="48" src="https://img.icons8.com/fluency/48/vite.png" alt="vite"/> <img src="https://img.icons8.com/color/48/000000/figma.png">
+<img src="https://img.icons8.com/color/48/000000/react-native.png"/> <img src="https://img.icons8.com/color/48/000000/redux.png"/> <img src="https://img.icons8.com/color/48/000000/typescript.png"/><img width="48" height="48" src="https://img.icons8.com/fluency/48/tailwind_css.png" alt="tailwind_css"/> <img width="48" height="48" src="https://img.icons8.com/fluency/48/vite.png" alt="vite"/> <img src="https://img.icons8.com/color/48/000000/figma.png">
 
 - **Backend**
 
