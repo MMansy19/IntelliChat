@@ -11,11 +11,11 @@ IntelliChat is a modern chat application developed using React components, Mater
 
 - **Frontend**
 
-<img src="https://img.icons8.com/color/48/000000/react-native.png"/> <img src="https://img.icons8.com/color/48/000000/redux.png"/> <img src="https://img.icons8.com/color/48/000000/javascript.png"/> <img src="https://img.icons8.com/color/48/000000/sass.png"/> <img src="https://img.icons8.com/color/48/000000/figma.png">
+<img src="https://img.icons8.com/color/48/000000/react-native.png"/> <img src="https://img.icons8.com/color/48/000000/redux.png"/> <img src="https://img.icons8.com/color/48/000000/typescript.png"/> <img width="48" height="48" src="https://img.icons8.com/fluency/48/vite.png" alt="vite"/> <img src="https://img.icons8.com/color/48/000000/figma.png">
 
 - **Backend**
 
-<img src="https://img.icons8.com/color/48/000000/nodejs.png"/> <img src="https://img.icons8.com/color/48/000000/express-js.png"/> <img src="https://img.icons8.com/color/48/000000/postgreesql.png"/>
+<img src="https://img.icons8.com/color/48/000000/nodejs.png"/> <img src="https://img.icons8.com/color/48/000000/express-js.png"/> <img src="https://img.icons8.com/color/48/000000/mongodb.png"/>
 
 
 ## Features
